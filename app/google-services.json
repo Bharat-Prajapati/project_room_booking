@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "142200781270",
+    "project_id": "apnaroom-8be9b",
+    "storage_bucket": "apnaroom-8be9b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142200781270:android:a52aca100112e0f99a8c77",
+        "android_client_info": {
+          "package_name": "com.example.apnaroom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCatfVjYtmLZjrlgPn0GUNb6iUalNfKoRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
