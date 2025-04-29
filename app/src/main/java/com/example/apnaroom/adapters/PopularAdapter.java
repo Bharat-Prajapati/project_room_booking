@@ -9,18 +9,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.apnaroom.Domains.PopularModel;
+import com.example.apnaroom.Domains.ItemsModel;
 import com.example.apnaroom.activities.DetailsActivity;
 import com.example.apnaroom.databinding.ViewholderPopularBinding;
-import com.example.apnaroom.interfaces.OnClickPopListener;
+import com.example.apnaroom.interfaces.OnClickItemListener;
 
 import java.util.ArrayList;
 
-public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopViewHolder> implements OnClickPopListener {
+public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopViewHolder> implements OnClickItemListener {
     private Context context;
-    private ArrayList<PopularModel> popularItems;
+    private ArrayList<ItemsModel> popularItems;
 
-    public PopularAdapter(Context context, ArrayList<PopularModel> popularItems) {
+    public PopularAdapter(Context context, ArrayList<ItemsModel> popularItems) {
         this.context = context;
         this.popularItems = popularItems;
     }
@@ -34,11 +34,11 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopViewH
 
     @Override
     public void onBindViewHolder(@NonNull PopularAdapter.PopViewHolder holder, int position) {
-        PopularModel item = popularItems.get(position);
-        holder.binding.roomName.setText(item.getRoom_name());
+        ItemsModel item = popularItems.get(position);
+        holder.binding.roomName.setText(item.getName());
         holder.binding.roomPrice.setText(String.format("$-"+item.getPrice_per_night()));
 
-        Glide.with(context).load(item.getImageUrl()).into(holder.binding.picUrl);
+        Glide.with(context).load(item.getImage_url()).into(holder.binding.picUrl);
 
         holder.itemView.setOnClickListener(v->{
             onClick(item);
@@ -51,7 +51,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopViewH
     }
 
     @Override
-    public void onClick(PopularModel items) {
+    public void onClick(ItemsModel items) {
         Intent intent = new Intent(context, DetailsActivity.class);
         intent.putExtra("item", items);
         context.startActivity(intent);

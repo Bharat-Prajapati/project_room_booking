@@ -7,8 +7,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.apnaroom.Domains.BannerModel;
 import com.example.apnaroom.Domains.CategoryModel;
-import com.example.apnaroom.Domains.PopularModel;
-import com.example.apnaroom.Domains.RecommendedModel;
+import com.example.apnaroom.Domains.ItemsModel;
 import com.example.apnaroom.repository.MainRepository;
 
 import java.util.ArrayList;
@@ -28,12 +27,16 @@ public class MainViewmodel extends ViewModel{
         return repository.loadCategoryData();
    }
 
-   public LiveData<ArrayList<PopularModel>> loadPopularData(){
+   public LiveData<ArrayList<ItemsModel>> loadPopularData(){
         return repository.loadPopularData();
    }
 
-   public LiveData<ArrayList<RecommendedModel>> loadRecommendedData(){
+   public LiveData<ArrayList<ItemsModel>> loadRecommendedData(){
         return repository.loadRecommendedData();
+   }
+
+   public LiveData<ArrayList<ItemsModel>> loadItemsByCategory(String categoryName){
+        return repository.loadItemsByCategory(categoryName);
    }
 
 }

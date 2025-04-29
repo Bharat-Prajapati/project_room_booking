@@ -9,8 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.apnaroom.Domains.BannerModel;
 import com.example.apnaroom.Domains.CategoryModel;
-import com.example.apnaroom.Domains.PopularModel;
-import com.example.apnaroom.Domains.RecommendedModel;
+import com.example.apnaroom.Domains.ItemsModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -78,16 +77,16 @@ public class MainRepository {
         return listData;
     }
 
-    public LiveData<ArrayList<PopularModel>> loadPopularData(){
-        MutableLiveData<ArrayList<PopularModel>> listData = new MutableLiveData<>();
+    public LiveData<ArrayList<ItemsModel>> loadPopularData(){
+        MutableLiveData<ArrayList<ItemsModel>> listData = new MutableLiveData<>();
         DatabaseReference reference = database.getReference("Popular");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<PopularModel> list = new ArrayList<>();
+                ArrayList<ItemsModel> list = new ArrayList<>();
                 for (DataSnapshot childrenSnapshot: snapshot.getChildren()){
-                    PopularModel item = childrenSnapshot.getValue(PopularModel.class);
+                    ItemsModel item = childrenSnapshot.getValue(ItemsModel.class);
                     if (item != null){
                         list.add(item);
                     }
@@ -104,18 +103,48 @@ public class MainRepository {
         return listData;
     }
 
-    public LiveData<ArrayList<RecommendedModel>> loadRecommendedData(){
-        MutableLiveData<ArrayList<RecommendedModel>> listData = new MutableLiveData<>();
+    public LiveData<ArrayList<ItemsModel>> loadRecommendedData(){
+        MutableLiveData<ArrayList<ItemsModel>> listData = new MutableLiveData<>();
         DatabaseReference reference = database.getReference("Recommended");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<RecommendedModel> list = new ArrayList<>();
+                ArrayList<ItemsModel> list = new ArrayList<>();
                 for (DataSnapshot childrenSnapshot: snapshot.getChildren()){
-                    RecommendedModel item = childrenSnapshot.getValue(RecommendedModel.class);
+                    ItemsModel item = childrenSnapshot.getValue(ItemsModel.class);
                     if (item != null){
                         list.add(item);
+                    }
+                }
+                listData.setValue(list);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(context, "Data is not loaded", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return listData;
+    }
+
+    public LiveData<ArrayList<ItemsModel>> loadItemsByCategory(String categoryName){
+        MutableLiveData<ArrayList<ItemsModel>> listData = new MutableLiveData<>();
+        DatabaseReference reference = database.getReference("Items");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<ItemsModel> list = new ArrayList<>();
+                for (DataSnapshot itemSnapshot: snapshot.getChildren()){
+                    if (itemSnapshot.hasChild(categoryName)) {
+                        for (DataSnapshot categoryItemSnapshot : itemSnapshot.child(categoryName).getChildren()) {
+                            ItemsModel item = categoryItemSnapshot.getValue(ItemsModel.class);
+                            if (item != null) {
+                                list.add(item);
+                            }
+                        }
+                        break;
                     }
                 }
                 listData.setValue(list);

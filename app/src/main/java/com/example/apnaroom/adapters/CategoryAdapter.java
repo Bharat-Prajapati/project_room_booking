@@ -1,6 +1,8 @@
 package com.example.apnaroom.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apnaroom.Domains.CategoryModel;
 import com.example.apnaroom.R;
+import com.example.apnaroom.activities.CategoryListActivity;
 import com.example.apnaroom.databinding.ViewholderCatgoryBinding;
 
 import java.util.ArrayList;
@@ -46,6 +49,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
                 selectedPosition = position;
                 notifyItemChanged(lastSelectedPosition);
                 notifyItemChanged(selectedPosition);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(context, CategoryListActivity.class);
+//                        intent.putExtra("id", item.getId());
+                        intent.putExtra("title", item.getTitle());
+                        context.startActivity(intent);
+                    }
+                }, 500);
             }
         });
 

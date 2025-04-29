@@ -7,18 +7,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
-import com.example.apnaroom.Domains.RecommendedModel;
+import com.example.apnaroom.Domains.ItemsModel;
 import com.example.apnaroom.activities.DetailsActivity;
 import com.example.apnaroom.databinding.ViewholderRecommendedBinding;
-import com.example.apnaroom.interfaces.OnClickRecListener;
+import com.example.apnaroom.interfaces.OnClickItemListener;
+
 import java.util.ArrayList;
 
 
-public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.RecViewHolder> implements OnClickRecListener {
+public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.RecViewHolder> implements OnClickItemListener {
     private Context context;
-    private ArrayList<RecommendedModel> recItems;
+    private ArrayList<ItemsModel> recItems;
 
-    public RecommendedAdapter(Context context, ArrayList<RecommendedModel> recItems) {
+    public RecommendedAdapter(Context context, ArrayList<ItemsModel> recItems) {
         this.context = context;
         this.recItems = recItems;
     }
@@ -31,11 +32,11 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull RecommendedAdapter.RecViewHolder holder, int position) {
-        RecommendedModel item = recItems.get(position);
-        holder.binding.roomName.setText(item.getRoom_name());
+        ItemsModel item = recItems.get(position);
+        holder.binding.roomName.setText(item.getName());
         holder.binding.roomPrice.setText(String.format("$-"+item.getPrice_per_night()));
 
-        Glide.with(context).load(item.getImageUrl()).into(holder.binding.picUrl);
+        Glide.with(context).load(item.getImage_url()).into(holder.binding.picUrl);
 
         holder.itemView.setOnClickListener(v->{
             onClick(item);
@@ -48,7 +49,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
     }
 
     @Override
-    public void onClick(RecommendedModel items) {
+    public void onClick(ItemsModel items) {
         Intent intent = new Intent(context, DetailsActivity.class);
         intent.putExtra("item", items);
         context.startActivity(intent);
