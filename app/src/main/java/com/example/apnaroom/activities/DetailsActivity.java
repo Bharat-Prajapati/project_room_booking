@@ -16,12 +16,18 @@ import com.example.apnaroom.Domains.ItemsModel;
 import com.example.apnaroom.R;
 import com.example.apnaroom.adapters.AmenitiesAdapter;
 import com.example.apnaroom.databinding.ActivityDetailsBinding;
+import com.example.apnaroom.utills.AndroidUtils;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class DetailsActivity extends AppCompatActivity {
     ActivityDetailsBinding binding;
     AmenitiesAdapter amenitiesAdapter;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Favourite");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,27 +40,46 @@ public class DetailsActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        ItemsModel item = (ItemsModel) getIntent().getSerializableExtra("item");
 
-        popBundle();
+        popBundle(item);
+
         binding.backBtn.setOnClickListener(v->{
             setBack();
         });
 
         binding.bookNowBtn.setOnClickListener(v->{
-            Intent intent = new Intent(this, PersonalInfoActivity.class);
+            Intent intent = new Intent(this, BookingActivity.class);
+            intent.putExtra("item", item);
             startActivity(intent);
         });
 
+        binding.favouriteIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addToFavList(item);
+            }
+        });
+
+    }
+
+    private void addToFavList(ItemsModel item) {
+        if (item != null && auth.getCurrentUser() != null){
+            String uId = auth.getCurrentUser().getUid();
+
+            databaseReference.child(uId).push().setValue(item)
+                    .addOnSuccessListener(unused -> AndroidUtils.showToast(this, "Added to favourite!"))
+                    .addOnFailureListener(e-> AndroidUtils.logError(e.getMessage()));
+            binding.favouriteIcon.setVisibility(View.GONE);
+            binding.addedToFav.setVisibility(View.VISIBLE);
+        }
     }
 
     private void setBack() {
        finish();
     }
 
-
-    private void popBundle() {
-        ItemsModel item = (ItemsModel) getIntent().getSerializableExtra("item");
-
+    private void popBundle(ItemsModel item) {
         if (item != null){
             binding.titleText.setText(item.getName());
             binding.descriptionText.setText(item.getDescription());

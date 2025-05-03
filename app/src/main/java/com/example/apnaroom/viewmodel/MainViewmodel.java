@@ -39,4 +39,8 @@ public class MainViewmodel extends ViewModel{
         return repository.loadItemsByCategory(categoryName);
    }
 
+   public LiveData<ArrayList<ItemsModel>> loadFavData(){
+        return repository.loadFavData();
+   }
+
 }

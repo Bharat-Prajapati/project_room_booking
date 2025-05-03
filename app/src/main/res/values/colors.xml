@@ -5,4 +5,8 @@
     <color name="app_color">#FFC107</color>
     <color name="sub_heading">#CFCDCD</color>
     <color name="gray_color">#F6F6F6</color>
+    <color name="location_color">#888686</color>
+    <color name="sky_color">#E6F2F6</color>
+    <color name="separation_color">#C0C0C0</color>
+
 </resources>

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ApnaRoom</string>
     <string name="see_all">see all</string>
+    <string name="default_web_client_id">142200781270-cf2vllq7cvcea5m9deo3cs8k4uklm5g0.apps.googleusercontent.com</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
