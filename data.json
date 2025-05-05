@@ -1,0 +1,27 @@
+{
+    "users": {
+      "user1": {
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "age": 25
+      },
+      "user2": {
+        "name": "Jane Smith",
+        "email": "janesmith@example.com",
+        "age": 30
+      }
+    },
+    "products": {
+      "product1": {
+        "name": "Laptop",
+        "price": 800,
+        "stock": 10
+      },
+      "product2": {
+        "name": "Phone",
+        "price": 500,
+        "stock": 15
+      }
+    }
+  }
+  

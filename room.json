@@ -1,0 +1,1325 @@
+{
+  "Banner": [
+    {
+      "id": 0,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB0En8o8y2uR53LxxYzw5-BmTCoyo1imBIdvH8bzLNXP6YkDmX-vzFs9M&s"
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNwBZzTMf_HchiuAFgoZhBh8xPJ7fQ0bXSY2mW7yQC2e8H0C4tsjkYQPQ&s"
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiIteEwIJzo-Cn7G-dIWgW-hZvzhxdB9Xex09IibREDIxetIeGcaugfeQ&s"
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj-DiIJSvh6nU8oJW27C-cdbP5TDUrFyhLG4tblu__3t0Se6rNdj_vB44&s"
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmr1nqN_YwD1PCPjKT6myXukc4k5MV-T5_Aw&s"
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgQAIz3B9pwxB79AG0FJWKePC5mJZn4arO7g&s"
+    }
+  ],
+  "Category": [
+    {
+      "id": 0,
+      "title": "Rooms"
+    },
+    {
+      "id": 1,
+      "title": "Hotels"
+    },
+    {
+      "id": 2,
+      "title": "Villas"
+    },
+    {
+      "id": 3,
+      "title": "Resorts"
+    },
+    {
+      "id": 4,
+      "title": "Hostels"
+    },
+    {
+      "id": 5,
+      "title": "PG"
+    }
+  ],
+  "NearBy":[
+    {
+      "id": 301,
+      "name": "Deluxe Single Room",
+      "type": "Single",
+      "price_per_night": 100,
+      "rating": 5.0,
+      "reviews": 354,
+      "availability": true,
+      "description": "A cozy room with a comfortable single bed.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJpURE-r8f7Ji7QS2ZLwgOm9eMddXiFdnyOMl7V95AFDuQ44pgQ-fh7g&s",
+      "location": "First floor, building A"
+    },
+    {
+      "id": 302,
+      "name": "Garden View Room",
+      "type": "Garden View",
+      "price_per_night": 750,
+      "rating": 4.1,
+      "reviews": 500,
+      "availability": true,
+      "description": "A peaceful retreat offering a scenic view of the hotel's lush gardens. This room features a comfortable double bed, large windows, and a tranquil atmosphere perfect for relaxation.",
+      "amenities": [
+        "Wi-Fi",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZfHELYpATAQWf4LdRLhS2W5Z6LRWbKDbwUh1Bpn_qfjGt1CtZ7jPh94&s",
+      "location": "First floor, garden view section"
+    },
+    {
+      "id": 303,
+      "name": "Luxury Suite",
+      "room_type": "Suite",
+      "price_per_night": 2000,
+      "rating": 5.0,
+      "reviews": 104,
+      "availability": true,
+      "description": "A premium room that offers luxurious amenities and furnishings. These rooms often include high-quality linens, a larger bed, premium bath products, and other superior features.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaI8snGhZbiXzD5PGsP2CUdJOHbMXiKKSmkA&s",
+      "location": "Pushkar, Rajasthan"
+    },
+    {
+      "id": 304,
+      "name": "The Leela Palace",
+      "location": "Udaipur, Rajasthan",
+      "rating": 3.7,
+      "price_per_night": 3600,
+      "description": "Modern luxury with views of the Lake Pichola and Aravalli hills.",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1KuvogPnIZ5Zwfv-bDztcJ_0LeeuWW37CMA3wDyd8oqPkJdwdokbojy0&s",
+      "amenities": [
+        "Mountain View Rooms",
+        "Bonfire",
+        "Skiing",
+        "Trekking",
+        "Restaurant"
+      ],
+      "reviews": 70
+    },
+    {
+      "id": 305,
+      "name": "Taj Lake Palace",
+      "location": "Udaipur, Rajasthan",
+      "rating": 4.8,
+      "price_per_night": 60000,
+      "description": "Iconic floating palace hotel offering royal hospitality and heritage luxury.",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQYODIOGqsJO7DZWm45CeMdRfSS1PqfJshw&s",
+      "amenities": [
+        "Lake View",
+        "Royal Suites",
+        "Cultural Performances",
+        "Luxury Spa"
+      ],
+      "reviews": 450
+    },
+    {
+      "id": 306,
+      "name": "Shikarbadi Villas",
+      "location": "Udaipur, Rajasthan",
+      "rating": 4.5,
+      "price_per_night": 22000,
+      "description": "Stay inside a royal hunting lodge with private villas and scenic forest views.",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRBk1-q7e7vDpuYVRxoat2Oh7EYd3nDtXI-A&s",
+      "amenities": [
+        "Forest View",
+        "Royal Lodge",
+        "Swimming Pool",
+        "Wildlife Sanctuary"
+      ],
+      "reviews": 120
+    },
+    {
+      "id": 307,
+      "name": "Rawla Narlai Private Villa",
+      "location": "Pali, Rajasthan",
+      "rating": 4.7,
+      "price_per_night": 25000,
+      "description": "Heritage villa offering a majestic stay in an ancient fort setting with modern comfort.",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrh3ikkdfTnjIFYp-Xl6G5cSzWkcHeK056HQ&s",
+      "amenities": [
+        "Fort Stay",
+        "Heritage Suites",
+        "Cultural Experiences",
+        "Fine Dining"
+      ],
+      "reviews": 160
+    },
+    {
+      "id": 307,
+      "name": "Connecting room",
+      "room_type": "Connected",
+      "price_per_night": 2500,
+      "rating": 2.0,
+      "reviews": 203,
+      "availability": true,
+      "description": "Two or more rooms that are connected by an internal door. Perfect for families or groups who want extra privacy but also want to stay close.",
+      "amenities": [
+        "📶 Wi-Fi",
+        "Air Conditioning",
+        "📺 TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony",
+        "🛁 Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgK-UKDxRZtUCd7MiT69oODJ_SlmMFe8etJw&s",
+      "location": "Bikaner, Rajasthan"
+    },
+    {
+      "id": 309,
+      "name": "Private villa",
+      "room_type": "villa",
+      "price_per_night": 2000,
+      "rating": 4.2,
+      "reviews": 402,
+      "availability": true,
+      "description": "A fully furnished, standalone private villa, often located in a secluded area with luxury features like a private pool, garden, and a butler service.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6V_aSVPr5Uv2dBs7aJd6xg6RS9DGEKpsN8g&s",
+      "location": "Udaipur, Rajasthan"
+    }
+  ],
+  "Popular": [
+    {
+      "id": 101,
+      "name": "Deluxe Single Room",
+      "type": "Single",
+      "price_per_night": 100,
+      "rating": 5.0,
+      "reviews": 354,
+      "availability": true,
+      "description": "A cozy room with a comfortable single bed.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJpURE-r8f7Ji7QS2ZLwgOm9eMddXiFdnyOMl7V95AFDuQ44pgQ-fh7g&s",
+      "location": "First floor, building A"
+    },
+    {
+      "id": 102,
+      "name": "Executive Double Room",
+      "type": "Double",
+      "price_per_night": 150,
+      "rating": 4.4,
+      "reviews": 440,
+      "availability": false,
+      "description": "A spacious room with a double bed and a lovely view.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiNYB41N1nIZRcTBwKxiZnIdinystT4ZOwon5DCA0lA4vxgwk8wSH0wCo&s",
+      "location": "Second floor, building B"
+    },
+    {
+      "id": 103,
+      "name": "Luxury Suite",
+      "type": "Suite",
+      "price_per_night": 250,
+      "rating": 3.5,
+      "reviews": 354,
+      "availability": true,
+      "description": "A luxurious suite with a king-sized bed and ocean view.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN3zdW035hFeYFiBNBEVLd-cLHNd2aHhdz4tAp1zkVKnUpxlNcHaj8gIA&s",
+      "location": "Penthouse level"
+    },
+    {
+      "id": 104,
+      "name": "Presidential Suite",
+      "type": "Suite",
+      "price_per_night": 300,
+      "rating": 4.7,
+      "reviews": 47,
+      "availability": true,
+      "description": "The epitome of luxury, this suite features a separate living room, master bedroom, a private study, and exclusive facilities like a jacuzzi and a private balcony with stunning views.",
+      "amenities": [
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfemKcWYVpCL5w_WTSnrSgRWjKA2pwMXAdc2A48ar3CMQAFEJnobEOHuw&s",
+      "location": "Top floor, building C"
+    },
+    {
+      "id": 105,
+      "name": "Superior King Room",
+      "type": "Superior",
+      "price_per_night": 350,
+      "rating": 3.1,
+      "reviews": 310,
+      "availability": true,
+      "description": "A large, comfortable room with a king-sized bed and premium amenities, perfect for couples or those seeking extra space and comfort during their stay.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCpfeklLHrhiyOtZH2BIljBlCVKShqtIB8yz8wIu9nK5e_N69FzLMjuF4&s",
+      "location": "Third floor, building A"
+    },
+    {
+      "id": 106,
+      "name": "Family Suite",
+      "type": "Suite",
+      "price_per_night": 500,
+      "rating": 3.2,
+      "reviews": 429,
+      "availability": true,
+      "description": " A spacious room designed for families, offering two separate bedrooms, a comfortable living area, and family-friendly amenities to ensure a relaxing stay for everyone.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRqUBwwdXiSWIMufE8kIYx7N8Wv4WJTh3w86g1o-FxbrsRq9UKCLAqm5U&s",
+      "location": "Ground floor, building B"
+    },
+    {
+      "id": 107,
+      "name": "Ocean View Room",
+      "type": "Ocean View",
+      "price_per_night": 600,
+      "rating": 4.8,
+      "reviews": 604,
+      "availability": true,
+      "description": "Enjoy breathtaking views of the ocean from this beautifully decorated room, complete with a queen-sized bed, private balcony, and large windows to let in natural light.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQUOCFeF3b7AxjXcIU5yn4IZeSW3d0Lhr52GdzG0gEmeKjjHEpeSeflqs&s",
+      "location": "Sixth floor, ocean-facing wing"
+    },
+    {
+      "id": 108,
+      "name": "Garden View Room",
+      "type": "Garden View",
+      "price_per_night": 750,
+      "rating": 4.1,
+      "reviews": 500,
+      "availability": true,
+      "description": "A peaceful retreat offering a scenic view of the hotel's lush gardens. This room features a comfortable double bed, large windows, and a tranquil atmosphere perfect for relaxation.",
+      "amenities": [
+        "Wi-Fi",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZfHELYpATAQWf4LdRLhS2W5Z6LRWbKDbwUh1Bpn_qfjGt1CtZ7jPh94&s",
+      "location": "First floor, garden view section"
+    },
+    {
+      "id": 109,
+      "name": "Premium Twin Room",
+      "type": "Twin",
+      "price_per_night": 1000,
+      "rating": 5.0,
+      "reviews": 800,
+      "availability": true,
+      "description": "A modern room featuring two twin beds, ideal for friends or business colleagues. The room offers high-speed internet access and a range of amenities for a comfortable stay.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBjTTnqYoldd2oG6PI8Nu24nSv2mAgc6SlH4knddBd1yTtNWuIgZMRa8Y&s",
+      "location": "Third floor, premium wing"
+    },
+    {
+      "id": 110,
+      "name": "Business Suite",
+      "type": "Suite",
+      "price_per_night": 1500,
+      "rating": 2.0,
+      "reviews": 100,
+      "availability": true,
+      "description": "Designed with business travelers in mind, this suite features a spacious work desk, ergonomic chair, high-speed internet, and extra facilities to help you stay productive while traveling.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWD9Ot-yzmSt64_dC90mr_FF9_mdBl8jkIlpDVMCRRPmEr1avse-jFOIA&s",
+      "location": "Fifth floor, business wing"
+    },
+    {
+      "id": 111,
+      "name": "Honeymoon Suite",
+      "type": "Suite",
+      "price_per_night": 2000,
+      "rating": 4.2,
+      "reviews": 200,
+      "availability": true,
+      "description": "A romantic and intimate suite designed for couples, featuring a king-sized bed, a private jacuzzi, and a beautiful view, perfect for celebrating special occasions.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqlR_PQcTQ9uZpt7khwAfn8LtjzIuZpzWKU526NCXT01QpNdPvDJa9l4c&s",
+      "location": "Second floor, romantic wing"
+    }
+  ],
+  "Recommended": [
+    {
+      "id": 201,
+      "name": "Loft room",
+      "room_type": "Lofty",
+      "price_per_night": 1500,
+      "rating": 5,
+      "reviews": 354,
+      "availability": true,
+      "description": "A room with an open floor plan, usually featuring high ceilings and a living area on a mezzanine floor. Lofts are modern and trendy, providing a spacious and airy environment.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXyNE02L7suEBEchrowqgPF6VO4lBAZVLvrg&s",
+      "location": "Jaipur, Rajasthan"
+    },
+    {
+      "id": 202,
+      "name": "Mountain view room",
+      "room_type": "Mountain",
+      "price_per_night": 2500,
+      "rating": 4.3,
+      "reviews": 481,
+      "availability": true,
+      "description": "A room offering a scenic view of the mountains. Perfect for nature lovers who want to enjoy a serene and peaceful atmosphere.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs8AUwMOvLW6j4Owx-ozZBjozfKm-RB3MhYA&s",
+      "location": "Udaipur, Rajasthan"
+    },
+    {
+      "id": 203,
+      "name": "Poolside room",
+      "room_type": "Pool view",
+      "price_per_night": 1800,
+      "rating": 3.0,
+      "reviews": 49,
+      "availability": true,
+      "description": "A room located near or overlooking the hotel’s pool. This type of room is ideal for those who prefer quick access to the pool area.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO1ZG9yPkAdBR9NBwHSNLMdRrck5dTr0pTqw&s",
+      "location": "Jodhpur, Rajasthan"
+    },
+    {
+      "id": 204,
+      "name": "Royal Suite",
+      "room_type": "Royal",
+      "price_per_night": 3000,
+      "rating": 3.7,
+      "reviews": 30,
+      "availability": true,
+      "description": "A luxurious, expansive suite designed for those seeking the utmost in comfort and exclusivity. It includes multiple bedrooms, a living room, a dining room, and high-end services.",
+      "amenities": [
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0JxgI2qCHTsxA7QPfdfjYhu9rf6CT_-1mAA&s",
+      "location": "Jaisalmer, Rajasthan"
+    },
+    {
+      "id": 205,
+      "name": "Luxury Suite",
+      "room_type": "Suite",
+      "price_per_night": 2000,
+      "rating": 5.0,
+      "reviews": 104,
+      "availability": true,
+      "description": "A premium room that offers luxurious amenities and furnishings. These rooms often include high-quality linens, a larger bed, premium bath products, and other superior features.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaI8snGhZbiXzD5PGsP2CUdJOHbMXiKKSmkA&s",
+      "location": "Pushkar, Rajasthan"
+    },
+    {
+      "id": 206,
+      "name": "Penthouse Suite",
+      "room_type": "Suite",
+      "price_per_night": 1700,
+      "rating": 4.3,
+      "reviews": 104,
+      "availability": true,
+      "description": "A top-floor, luxurious room offering stunning panoramic views of the city or the ocean. This room is equipped with high-end amenities like private terraces, a jacuzzi, and sometimes a private pool.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFGJyATlh2DwrkVd8i78d7hq7P6IzPTorHNg&s",
+      "location": "Jaipur, Rajasthan"
+    },
+    {
+      "id": 207,
+      "name": "Connecting room",
+      "room_type": "Connected",
+      "price_per_night": 2500,
+      "rating": 2.0,
+      "reviews": 203,
+      "availability": true,
+      "description": "Two or more rooms that are connected by an internal door. Perfect for families or groups who want extra privacy but also want to stay close.",
+      "amenities": [
+        "📶 Wi-Fi",
+        "Air Conditioning",
+        "📺 TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony",
+        "🛁 Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgK-UKDxRZtUCd7MiT69oODJ_SlmMFe8etJw&s",
+      "location": "Bikaner, Rajasthan"
+    },
+    {
+      "id": 208,
+      "name": "Private villa",
+      "room_type": "villa",
+      "price_per_night": 2000,
+      "rating": 4.2,
+      "reviews": 402,
+      "availability": true,
+      "description": "A fully furnished, standalone private villa, often located in a secluded area with luxury features like a private pool, garden, and a butler service.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6V_aSVPr5Uv2dBs7aJd6xg6RS9DGEKpsN8g&s",
+      "location": "Udaipur, Rajasthan"
+    },
+    {
+      "id": 209,
+      "name": "Sunset room",
+      "room_type": "Sunny",
+      "price_per_night": 2100,
+      "rating": 5.0,
+      "reviews": 302,
+      "availability": true,
+      "description": "A room with a view of the sunset. Typically located on higher floors or with windows facing the west, ideal for guests who want to enjoy a beautiful sunset from their room.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_jB9o1rtLPo_expjtyrLrvsvl1wxcB_I84g&s",
+      "location": "Jaipur, Rajasthan"
+    },
+    {
+      "id": 210,
+      "name": "Historical room",
+      "room_type": "History",
+      "price_per_night": 1700,
+      "rating": 3.2,
+      "reviews": 402,
+      "availability": true,
+      "description": "A room with a design inspired by the history of the region or hotel. These rooms are perfect for history buffs or those who appreciate classic architecture.",
+      "amenities": [
+        "Wi-Fi",
+        "Air Conditioning",
+        "TV",
+        "Mini Fridge",
+        "Jacuzzi",
+        "Private Balcony",
+        "Bathtub"
+      ],
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZEnY2OZ7aCOLebZuS4FxkLjR_rRFxLhTF5w&s",
+      "location": "Jaisalmer, Rajasthan"
+    }
+  ],
+  "Items": [
+    {
+      "Hotels": [
+        {
+          "id": 1,
+          "name": "Taj Lake Palace",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.5,
+          "price_per_night": 3500,
+          "description": "Ek floating white marble palace in Lake Pichola. Most romantic hotel in the world.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdIGj2nXN6bqtKSo2srv0UsvkzLSJ3POidgH9A7dm_043Du2lG5IOM21w&s",
+          "amenities": [
+            "Free Wi-Fi",
+            "Swimming Pool",
+            "Spa",
+            "Restaurant",
+            "Parking"
+          ],
+          "reviews": 120
+        },
+        {
+          "id": 2,
+          "name": "The Oberoi Udaivilas",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.2,
+          "price_per_night": 2800,
+          "description": "Ultra-luxurious hotel built on royal hunting grounds.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS4ZFyYpI3gizpYSgfY5hPl9Ld7NJYirgDe52pEpRyK93jbY-rJLcMnvs&s",
+          "amenities": [
+            "Beach Access",
+            "Bar",
+            "Gym",
+            "Airport Shuttle",
+            "Pet Friendly"
+          ],
+          "reviews": 95
+        },
+        {
+          "id": 3,
+          "name": "Umaid Bhawan Palace",
+          "location": "Jodhpur, Rajasthan",
+          "rating": 4.8,
+          "price_per_night": 4000,
+          "description": "World's largest private residence palace turned luxury hotel (Taj Group).",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Mv7Mff0XwJZ4NJ5Ypp7p-eKU-BLm30Jcsrtig_tpKhVA-s4kAw_fMAI&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 85
+        },
+        {
+          "id": 4,
+          "name": "Rambagh Palace",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.8,
+          "price_per_night": 5000,
+          "description": "The former residence of the Maharaja of Jaipur, now a stunning hotel by Taj.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfVwSiaLTdLTZfaXqX4-YBn9qNZQ7vnCIxOBLhPQTEWA&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 95
+        },
+        {
+          "id": 5,
+          "name": "Sujan Rajmahal Palace",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.3,
+          "price_per_night": 3000,
+          "description": "Boutique luxury hotel with royal heritage style and vibrant interiors.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjk90z93tWCi5LP1T0otafCTX4kFZMHDWPOLZqKTfG1M4IUQz3FPIUGY&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 80
+        },
+        {
+          "id": 6,
+          "name": "Samode Palace",
+          "location": "Near Jaipur, Rajasthan",
+          "rating": 4.0,
+          "price_per_night": 2800,
+          "description": "475-year-old palace hotel famous for its Mughal and Rajasthani architecture.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAdw8mcFqB0rlelZy9bwZiOFigR_T-UC80eVipG6qJtFrrizWySVKttIg&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 85
+        },
+        {
+          "id": 7,
+          "name": "The Leela Palace",
+          "location": "Udaipur, Rajasthan",
+          "rating": 3.7,
+          "price_per_night": 3600,
+          "description": "Modern luxury with views of the Lake Pichola and Aravalli hills.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1KuvogPnIZ5Zwfv-bDztcJ_0LeeuWW37CMA3wDyd8oqPkJdwdokbojy0&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 70
+        },
+        {
+          "id": 8,
+          "name": "RAAS Jodhpur",
+          "location": "Jodhpur, Rajasthan",
+          "rating": 2.0,
+          "price_per_night": 3000,
+          "description": "A luxury boutique hotel near Mehrangarh Fort, known for beautiful architecture.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgYRcJUeStqZzXhj-HtSFW78aSgUm35EzN7qJ4DHip5NllEVNoYxAdqY&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 60
+        },
+        {
+          "id": 9,
+          "name": "Amanbagh",
+          "location": "Alwar (Ajabgarh), Rajasthan",
+          "rating": 3.6,
+          "price_per_night": 2500,
+          "description": "Peaceful, green retreat inspired by Mughal architecture. Best for wellness and spa.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WiPF6nfVVwUHXppX3UwSp2aOvb9Plp22Pe6kGIubCDFF8r7lHpcGFzA&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 70
+        },
+        {
+          "id": 10,
+          "name": "Deogarh Mahal",
+          "location": "Rajsamand, Rajasthan",
+          "rating": 4.0,
+          "price_per_night": 3300,
+          "description": "Heritage hotel with traditional Mewari style, surrounded by Aravallis.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOXlYObgDdODvErTYFr_VJ_dC3ALtGx4-rHZfAL7fyVY5acz43EGzuhWw&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 50
+        },
+        {
+          "id": 11,
+          "name": "The Oberoi Rajvilas:",
+          "location": "Kota, Rajasthan",
+          "rating": 4.6,
+          "price_per_night": 4400,
+          "description": "Jaane maane Oberoi Group ka property, bohot zyada peaceful aur lavish.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnTRGm9RRM4HSUh9Ak7MLzKG7e9ZcG5TFYjau8PFxTTDbRX7R_cKdyNlg&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 49
+        },
+        {
+          "id": 12,
+          "name": "ITC Rajputana",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.0,
+          "price_per_night": 3000,
+          "description": "Rajput architecture inspired 5-star hotel, famous for food and pool.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-tLFakXgeDcoK1SADT0qRQDt4GBBpi3ITsrZj1AyvOn4XOmIqbaP0_oE&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 68
+        },
+        {
+          "id": 13,
+          "name": "Fairmont Jaipur",
+          "location": "Jaipur, Rajasthan",
+          "rating": 3.9,
+          "price_per_night": 3900,
+          "description": "Fort style luxury resort, shadiyon ke liye popular.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw_hNHp9XFXkfqPyzN6SoyqyXrfjjzH16TQg-1-ykRrH8C32asoyAMbV8&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 79
+        },
+        {
+          "id": 14,
+          "name": "Shahpura House/Alsisar Haveli",
+          "location": "Jodhpur, Rajasthan",
+          "rating": 4.3,
+          "price_per_night": 4300,
+          "description": "Affordable heritage experience wale log ke liye.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1ywZT1AdLaVmNZssAlZzxcqvLrpW-PWNae2-59atwJCdq_Awr_0bSBtM&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 833
+        },
+        {
+          "id": 15,
+          "name": "Hilton Jaipur",
+          "location": "Jaipur, Rajasthan",
+          "rating": 3.8,
+          "price_per_night": 3800,
+          "description": "World's largest private residence palace turned luxury hotel (Taj Group).",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mqlC63rC1-7CbtV5Sw3TUXdVFSangoaysE5QCJoJ532P3fFtPOej6G0&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 680
+        },
+        {
+          "id": 16,
+          "name": "Hotel Pearl Palace",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.3,
+          "price_per_night": 4300,
+          "description": "A vibrant, artistic palace offering private luxury stays.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfFWLOhGblx4Rkof3PyvidPW-Z04DOu5rd3Kywi9_oK8qZSIf8UMjkgcY&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 465
+        },
+        {
+          "id": 17,
+          "name": "The Oberoi Udaivilas",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.7,
+          "price_per_night": 4700,
+          "description": "Award-winning luxury hotel with lakefront gardens and private pools.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJgrWOj-mgXP0DAxrc30XoEtEOAYqVhcUMp8aVVcupoRHB3U_yghWVi2g&s",
+          "amenities": [
+            "Mountain View Rooms",
+            "Bonfire",
+            "Skiing",
+            "Trekking",
+            "Restaurant"
+          ],
+          "reviews": 546
+        }
+      ]
+    },
+    {
+      "Villas": [
+        {
+          "id": 1,
+          "name": "Royal Heritage Villa",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.7,
+          "price_per_night": 30000,
+          "description": "Experience royal living with stunning lake views, private pools, and heritage decor.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwt5EoH_aKIC4KgLjsSE29jEgtRWzhEdQVJQ&s",
+          "amenities": [
+            "Private Pool",
+            "Lake View",
+            "Butler Service",
+            "Traditional Decor"
+          ],
+          "reviews": 150
+        },
+        {
+          "id": 2,
+          "name": "Villa 243",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.5,
+          "price_per_night": 15000,
+          "description": "Boutique villa with heritage interiors, modern facilities, and peaceful ambiance.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_eP3XNWyPRFi0yviShoV-gus1vvHoBoq1qA&s",
+          "amenities": [
+            "Heritage Interiors",
+            "Swimming Pool",
+            "Fine Dining",
+            "Cultural Tours"
+          ],
+          "reviews": 110
+        },
+        {
+          "id": 3,
+          "name": "Tree of Life Villas",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.8,
+          "price_per_night": 20000,
+          "description": "Private luxury villas offering gardens, spa retreats, and customized wellness programs.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2XWqlc0V6egpwjVRTE3TNGf-894PkiCNLWg&s",
+          "amenities": [
+            "Private Garden",
+            "Plunge Pool",
+            "Spa Services",
+            "Yoga Retreat"
+          ],
+          "reviews": 190
+        },
+        {
+          "id": 4,
+          "name": "Ranthambhore Bagh Villa",
+          "location": "Ranthambhore, Rajasthan",
+          "rating": 4.6,
+          "price_per_night": 18000,
+          "description": "A jungle-themed villa offering a rustic yet luxurious stay near the tiger reserve.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBFt9iK_FHDKCE-cNdKiGhubKDe2NcZXDJ4A&s",
+          "amenities": [
+            "Safari Tours",
+            "Private Villa",
+            "Campfire Evenings",
+            "Wildlife Views"
+          ],
+          "reviews": 130
+        },
+        {
+          "id": 5,
+          "name": "The Farm Jaipur",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.4,
+          "price_per_night": 14000,
+          "description": "An artistic villa surrounded by farms, perfect for intimate gatherings and creative retreats.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0cRazqRJ7W1nVWdZak3YL8RvHBe8IhJyGXQ&s",
+          "amenities": [
+            "Artistic Decor",
+            "Organic Farm",
+            "Event Spaces",
+            "Swimming Pool"
+          ],
+          "reviews": 90
+        },
+        {
+          "id": 6,
+          "name": "Shikarbadi Villas",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.5,
+          "price_per_night": 22000,
+          "description": "Stay inside a royal hunting lodge with private villas and scenic forest views.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRBk1-q7e7vDpuYVRxoat2Oh7EYd3nDtXI-A&s",
+          "amenities": [
+            "Forest View",
+            "Royal Lodge",
+            "Swimming Pool",
+            "Wildlife Sanctuary"
+          ],
+          "reviews": 120
+        },
+        {
+          "id": 7,
+          "name": "Rawla Narlai Private Villa",
+          "location": "Pali, Rajasthan",
+          "rating": 4.7,
+          "price_per_night": 25000,
+          "description": "Heritage villa offering a majestic stay in an ancient fort setting with modern comfort.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrh3ikkdfTnjIFYp-Xl6G5cSzWkcHeK056HQ&s",
+          "amenities": [
+            "Fort Stay",
+            "Heritage Suites",
+            "Cultural Experiences",
+            "Fine Dining"
+          ],
+          "reviews": 160
+        }
+      ]
+    },
+    {
+      "Resorts": [
+        {
+          "id": 1,
+          "name": "Oberoi Udaivilas",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.9,
+          "price_per_night": 45000,
+          "description": "Luxury resort with grand architecture, private pools, and lakefront views.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4hlGPJSl93prLiqYk6ZynyDTzfE9QczmCeA&s",
+          "amenities": [
+            "Private Pool",
+            "Spa",
+            "Lake View",
+            "Fine Dining",
+            "Luxury Suites"
+          ],
+          "reviews": 500
+        },
+        {
+          "id": 2,
+          "name": "Taj Lake Palace",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.8,
+          "price_per_night": 60000,
+          "description": "Iconic floating palace hotel offering royal hospitality and heritage luxury.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQYODIOGqsJO7DZWm45CeMdRfSS1PqfJshw&s",
+          "amenities": [
+            "Lake View",
+            "Royal Suites",
+            "Cultural Performances",
+            "Luxury Spa"
+          ],
+          "reviews": 450
+        },
+        {
+          "id": 3,
+          "name": "The Leela Palace Udaipur",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.7,
+          "price_per_night": 50000,
+          "description": "Majestic resort combining Mewar architecture with modern luxuries on Lake Pichola.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAtbo4qY1LmzyW8h__2RJLe_2QPS_UxoJ1Qg&s",
+          "amenities": [
+            "Lake View",
+            "Infinity Pool",
+            "Spa",
+            "Private Dining"
+          ],
+          "reviews": 400
+        },
+        {
+          "id": 4,
+          "name": "Suján Rajmahal Palace",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.6,
+          "price_per_night": 40000,
+          "description": "A lavish pink palace offering intimate luxury, royal suites, and exquisite dining.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg8n0Lm_vn246-n79MdmEExhPpPmmpAWAI2g&s",
+          "amenities": [
+            "Royal Suites",
+            "Private Gardens",
+            "Heritage Dining",
+            "Luxury Spa"
+          ],
+          "reviews": 300
+        },
+        {
+          "id": 5,
+          "name": "Amanbagh Resort",
+          "location": "Alwar, Rajasthan",
+          "rating": 4.8,
+          "price_per_night": 55000,
+          "description": "Luxury resort surrounded by greenery and ancient forts, ideal for wellness retreats.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToHNaaQRJJBsoMOIyOxXYGTcYpALxK8osx-g&s",
+          "amenities": [
+            "Spa Retreat",
+            "Private Pools",
+            "Yoga Pavilion",
+            "Heritage Tours"
+          ],
+          "reviews": 350
+        }
+      ]
+    },
+    {
+      "Hostels": [
+        {
+          "id": 1,
+          "name": "Zostel Jaipur",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.5,
+          "price_per_night": 700,
+          "description": "Colorful and vibrant hostel in Jaipur offering dorms and private rooms for travelers.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3iuiLetX2AWL22zxgedp6-T24kGFvuk-Zug&s",
+          "amenities": [
+            "Free WiFi",
+            "Common Lounge",
+            "AC Dorms",
+            "Rooftop Cafe"
+          ],
+          "reviews": 320
+        },
+        {
+          "id": 2,
+          "name": "Moustache Hostel Udaipur",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.6,
+          "price_per_night": 800,
+          "description": "Chill hostel near Lake Pichola with colorful interiors, terrace lounge, and travel activities.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHCoxHDV-hq-rM_LGW9yw4dA8ksPqZpdLz2A&s",
+          "amenities": [
+            "Free Breakfast",
+            "Lake View Terrace",
+            "Travel Desk",
+            "Free WiFi"
+          ],
+          "reviews": 280
+        },
+        {
+          "id": 3,
+          "name": "goSTOPS Jodhpur",
+          "location": "Jodhpur, Rajasthan",
+          "rating": 4.4,
+          "price_per_night": 600,
+          "description": "Heritage-style hostel with modern facilities located near Mehrangarh Fort.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXkZ7ikXnDW6vTFeU00ZI0JN8l1WWG7z77CA&s",
+          "amenities": [
+            "Common Lounge",
+            "Cafe",
+            "City Tours",
+            "Games Room"
+          ],
+          "reviews": 250
+        }
+      ]
+    },
+    {
+      "PG": [
+        {
+          "id": 1,
+          "name": "PG for Gents, Jaipur",
+          "location": "Jaipur, Rajasthan",
+          "rating": 4.2,
+          "price_per_night": 134,
+          "description": "A spacious PG with AC rooms, 24/7 water supply, and free Wi-Fi for working professionals.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp4CNoSnxd215jJwFsJOBwagSkRaf8iGyLNw&s",
+          "amenities": [
+            "AC Rooms",
+            "Free WiFi",
+            "24/7 Water Supply",
+            "Laundry Services",
+            "Common Kitchen"
+          ],
+          "reviews": 120
+        },
+        {
+          "id": 2,
+          "name": "PG for Ladies, Udaipur",
+          "location": "Udaipur, Rajasthan",
+          "rating": 4.6,
+          "price_per_night": 120,
+          "description": "Secure and comfortable PG with separate rooms for ladies, located near City Palace.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1NRGFl4OnBvw4KAu-Lko7E23HtwhBPJaEGA&s",
+          "amenities": [
+            "Free WiFi",
+            "Security",
+            "Food Provided",
+            "Laundry Services",
+            "Wardrobe"
+          ],
+          "reviews": 95
+        },
+        {
+          "id": 3,
+          "name": "PG for Boys, Jodhpur",
+          "location": "Jodhpur, Rajasthan",
+          "rating": 4.3,
+          "price_per_night": 110,
+          "description": "Well-maintained PG with shared rooms and separate bathrooms, located near Jodhpur Station.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLC0NLYab0AJTHL6GRx782T9n5lPXngQEayQ&s",
+          "amenities": [
+            "Free WiFi",
+            "Laundry",
+            "Common Room",
+            "24/7 Hot Water",
+            "Food Included"
+          ],
+          "reviews": 150
+        },
+        {
+          "id": 4,
+          "name": "Luxury PG for Women, Ajmer",
+          "location": "Ajmer, Rajasthan",
+          "rating": 4.7,
+          "price_per_night": 170,
+          "description": "Luxury PG with high-end facilities, including personal wardrobes, and daily cleaning services.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbmHMrh8Vb84vi0DXvZZSDZhCFUUwlmiZ3_g&s",
+          "amenities": [
+            "AC Rooms",
+            "Security",
+            "Housekeeping",
+            "Home-Cooked Meals",
+            "Personal Wardrobe"
+          ],
+          "reviews": 80
+        },
+        {
+          "id": 5,
+          "name": "PG for Working Professionals, Kota",
+          "location": "Kota, Rajasthan",
+          "rating": 4.4,
+          "price_per_night": 140,
+          "description": "Ideal PG for working professionals with modern amenities and well-furnished rooms.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWLY2sKBRjVFbGpdi3w4f9u0eX5CT3rgpeFQ&s",
+          "amenities": [
+            "Free WiFi",
+            "Food Provided",
+            "Laundry",
+            "24/7 Security",
+            "Common Area"
+          ],
+          "reviews": 110
+        },
+        {
+          "id": 6,
+          "name": "PG for Students, Bikaner",
+          "location": "Bikaner, Rajasthan",
+          "rating": 4.1,
+          "price_per_night": 90,
+          "description": "Affordable PG for students with comfortable rooms, study desks, and a mess for meals.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhH75cLF0rXWm_Zy6DCPItiEJdGGUWLt4dQQ&s",
+          "amenities": [
+            "Free WiFi",
+            "Study Room",
+            "Mess Food",
+            "24/7 Water Supply",
+            "Wardrobe"
+          ],
+          "reviews": 130
+        },
+        {
+          "id": 7,
+          "name": "PG for Working Women, Jaisalmer",
+          "location": "Jaisalmer, Rajasthan",
+          "rating": 4.5,
+          "price_per_night": 140,
+          "description": "A modern and clean PG for women with a homely environment and safety features.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_7N3gDC8p5TTDwywhvsnqIxQtBS0TucbZGQ&s",
+          "amenities": [
+            "AC Rooms",
+            "Food Provided",
+            "Laundry Services",
+            "Security",
+            "Wi-Fi"
+          ],
+          "reviews": 105
+        },
+        {
+          "id": 8,
+          "name": "PG with Private Room, Pushkar",
+          "location": "Pushkar, Rajasthan",
+          "rating": 4.3,
+          "price_per_night": 150,
+          "description": "A private PG room with all basic amenities and close proximity to the Pushkar Lake.",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSle_8cjxRR9ofi8dMVoS6OtzUH4VTKIRis9Q&s",
+          "amenities": [
+            "Private Room",
+            "Free WiFi",
+            "Security",
+            "Food Included",
+            "Laundry Services"
+          ],
+          "reviews": 90
+        }
+      ]
+    }
+  ]
+}
