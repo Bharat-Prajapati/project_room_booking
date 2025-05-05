@@ -25,7 +25,6 @@ public class CategoryListActivity extends AppCompatActivity {
     SelectedCategoryAdapter adapter;
     MainViewmodel viewmodel = new MainViewmodel(this);
     List<ItemsModel> fullItemList = new ArrayList<>();
-    private int id;
     private String title = "";
 
     @Override
@@ -48,7 +47,7 @@ public class CategoryListActivity extends AppCompatActivity {
     }
 
     private void setUpSearching() {
-        binding.searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;

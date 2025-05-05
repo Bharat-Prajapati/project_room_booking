@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -29,6 +30,7 @@ import com.example.apnaroom.adapters.CategoryAdapter;
 import com.example.apnaroom.adapters.PopularAdapter;
 import com.example.apnaroom.adapters.RecommendedAdapter;
 import com.example.apnaroom.databinding.ActivityMainBinding;
+import com.example.apnaroom.fragments.BookingDetailsFragment;
 import com.example.apnaroom.fragments.FavouriteFragment;
 import com.example.apnaroom.fragments.HomeFragment;
 import com.example.apnaroom.fragments.ProfileFragment;
@@ -41,6 +43,7 @@ import nl.joery.animatedbottombar.AnimatedBottomBar;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    private long againPressTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                    Intent intent = new Intent(Settings.ACTION_SETTINGS);
                    startActivity(intent);
                }
-
             }
 
             @Override
@@ -83,13 +85,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void loadFragment(Fragment fragment) {
+    public void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.fragmentContainerView, fragment)
                 .commit();
+
+        if (fragment instanceof BookingDetailsFragment){
+            transaction.addToBackStack(null);
+        }
     }
 
+    @Override
+    public void onBackPressed() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment currentFragment = fm.findFragmentById(R.id.fragmentContainerView);
+        fm.popBackStack();
 
-
+        if (currentFragment instanceof HomeFragment || currentFragment instanceof FavouriteFragment || currentFragment instanceof ProfileFragment){
+            if (System.currentTimeMillis() - againPressTime <= 2000){
+                super.onBackPressed();
+            }else {
+                againPressTime = System.currentTimeMillis();
+                Toast.makeText(this, "Tap again to exit", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 }

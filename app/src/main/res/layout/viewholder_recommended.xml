@@ -53,10 +53,10 @@
         android:id="@+id/favRecIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/gray_color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/picUrl"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="@id/picUrl"
+        app:layout_constraintTop_toTopOf="@+id/picUrl"
         app:srcCompat="@drawable/favorite" />
 
     <ImageView
@@ -64,9 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/picUrl"
+        app:layout_constraintEnd_toEndOf="@id/picUrl"
+        app:layout_constraintTop_toTopOf="@+id/picUrl"
         app:srcCompat="@drawable/heart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

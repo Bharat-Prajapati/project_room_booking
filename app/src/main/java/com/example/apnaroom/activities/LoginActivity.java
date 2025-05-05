@@ -29,6 +29,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import kotlin.Result;
+
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     FirebaseAuth auth;
@@ -53,13 +55,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-                overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
             }
         });
 
         binding.loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                binding.loginCoverView.setVisibility(View.VISIBLE);
+                binding.loginProgressBar.setVisibility(View.VISIBLE);
                 String email = binding.loginEmailText.getText().toString();
                 String password = binding.loginPassText.getText().toString();
 
@@ -92,6 +95,9 @@ public class LoginActivity extends AppCompatActivity {
                 Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
                 try {
                     GoogleSignInAccount account = task.getResult(ApiException.class);
+                    if (account == null){
+                        return;
+                    }
                     firebaseAuthWithGoogle(account.getIdToken());
                 } catch (ApiException e) {
                     AndroidUtils.logError("Google sign in failed " + e.getMessage());
@@ -106,35 +112,53 @@ public class LoginActivity extends AppCompatActivity {
         AndroidUtils.customTag("Token", idToken);
         FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()){
+                binding.loginProgressBar.setVisibility(View.GONE);
+                binding.loginCoverView.setVisibility(View.GONE);
                 FirebaseUser currentUser = auth.getCurrentUser();
                 AndroidUtils.showToast(LoginActivity.this, "Sign in successful " + currentUser.getDisplayName());
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
             else {
                 AndroidUtils.showToast(LoginActivity.this, "Authentication Failed");
+                binding.loginProgressBar.setVisibility(View.GONE);
+                binding.loginCoverView.setVisibility(View.GONE);
             }
         });
     }
 
     private void signWithEmailAndPassword(String email, String password) {
         if (email.isEmpty()){
+            binding.loginProgressBar.setVisibility(View.GONE);
+            binding.loginCoverView.setVisibility(View.GONE);
             binding.loginEmailText.setError("Please fill email");
         }
         else if (password.isEmpty()){
+            binding.loginProgressBar.setVisibility(View.GONE);
+            binding.loginCoverView.setVisibility(View.GONE);
             binding.loginPassText.setError("Please fill password");
         }
         else {
             auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this::onCompleteLogin)
-                    .addOnFailureListener(error -> AndroidUtils.showToast(this, error.getMessage()));
+                    .addOnFailureListener(error -> {
+                        binding.loginProgressBar.setVisibility(View.GONE);
+                        binding.loginCoverView.setVisibility(View.GONE);
+                        AndroidUtils.showToast(this, error.getMessage());
+                    });
         }
     }
 
     private void onCompleteLogin(Task<AuthResult> authResultTask) {
         if (authResultTask.isSuccessful()){
+            binding.loginProgressBar.setVisibility(View.GONE);
+            binding.loginCoverView.setVisibility(View.GONE);
             AndroidUtils.showToast(this, "Login successful");
             Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(loginIntent);
+        }
+        else {
+            binding.loginCoverView.setVisibility(View.GONE);
+            binding.loginProgressBar.setVisibility(View.GONE);
         }
     }
 
@@ -146,6 +170,5 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

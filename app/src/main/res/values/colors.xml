@@ -8,5 +8,5 @@
     <color name="location_color">#888686</color>
     <color name="sky_color">#E6F2F6</color>
     <color name="separation_color">#C0C0C0</color>
-
+    <color name="cover_color">#80000000</color>
 </resources>

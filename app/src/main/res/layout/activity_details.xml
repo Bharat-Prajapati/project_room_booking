@@ -41,7 +41,7 @@
                     android:id="@+id/black_overlay"
                     android:layout_width="0dp"
                     android:layout_height="350dp"
-                    android:background="#80000000"
+                    android:background="@color/cover_color"
                     app:layout_constraintTop_toTopOf="@id/room_pic"
                     app:layout_constraintBottom_toBottomOf="@id/room_pic"
                     app:layout_constraintStart_toStartOf="@id/room_pic"

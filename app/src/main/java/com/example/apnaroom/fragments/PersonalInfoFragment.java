@@ -48,7 +48,6 @@ public class PersonalInfoFragment extends Fragment {
 //            transaction.replace(R.id.personal_frag_container, new PaymentFragment())
 //                    .addToBackStack(null)
 //                    .commit();
-
             if (getActivity() instanceof BookingActivity){
                 ((BookingActivity) getActivity()).loadFragment(new PaymentFragment());
             }
@@ -57,7 +56,6 @@ public class PersonalInfoFragment extends Fragment {
         ItemsModel item = (ItemsModel) getActivity().getIntent().getSerializableExtra("item");
 
         if (item != null) {
-
             binding.priceText.setText("$"+item.getPrice_per_night()+"/night");
         }
 

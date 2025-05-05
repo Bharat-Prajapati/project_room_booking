@@ -14,9 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
+import com.example.apnaroom.Domains.Users;
 import com.example.apnaroom.R;
 import com.example.apnaroom.adapters.BannerAdapter;
 import com.example.apnaroom.adapters.CategoryAdapter;
+import com.example.apnaroom.adapters.NearByAdapter;
 import com.example.apnaroom.adapters.PopularAdapter;
 import com.example.apnaroom.adapters.RecommendedAdapter;
 import com.example.apnaroom.databinding.FragmentHomeBinding;
@@ -28,6 +30,7 @@ public class HomeFragment extends Fragment {
 
     BannerAdapter bannerAdapter;
     CategoryAdapter categoryAdapter;
+    NearByAdapter nearByAdapter;
     PopularAdapter popularAdapter;
     RecommendedAdapter recommendedAdapter;
     private MainViewmodel viewmodel = new MainViewmodel(getContext());
@@ -40,7 +43,6 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,21 +63,34 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setBanner();
         setCategory();
+        setNearBy();
         setPopular();
         setRecommended();
         setUpUserDetails();
     }
 
     private void setUpUserDetails() {
-        FirebaseUser user = auth.getCurrentUser();
-        Uri photoUrl = user.getPhotoUrl();
-        String username = user.getDisplayName();
+        FirebaseUser currentUser = auth.getCurrentUser();
+        Uri photoUrl = currentUser.getPhotoUrl();
+        String username = currentUser.getDisplayName();
+        String currentUserEmail = currentUser.getEmail();
 
-        if (user != null && user.getPhotoUrl() != null){
+        if (currentUser != null && currentUser.getPhotoUrl() != null){
             Glide.with(this).load(photoUrl).placeholder(R.drawable.ic_account_24).into(binding.userPic);
         }
-        if (user != null && username != null)
+        if (currentUser != null && username != null)
             binding.userNameText.setText("Hello, "+username+"!");
+
+
+//        viewmodel.loadUserDetails().observe(getViewLifecycleOwner(), userDetails->{
+//            for (Users user : userDetails){
+//                if (user.getEmail().equals(currentUserEmail)){
+//                    String nameToShow = (user.getName() != null && !user.getName().isEmpty()) ? user.getName() : defaultName;
+//                    binding.userNameText.setText("Hello, " + nameToShow + "!");
+//                    break;
+//                }
+//            }
+//        });
     }
 
     private void setBanner() {
@@ -99,6 +114,26 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    private void setCategory() {
+        binding.catProgressBar.setVisibility(View.VISIBLE);
+        viewmodel.loadCategoryData().observe(getActivity(), itemsList->{
+            binding.catProgressBar.setVisibility(View.GONE);
+            binding.catRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+            categoryAdapter = new CategoryAdapter(itemsList, getContext());
+            binding.catRecyclerView.setAdapter(categoryAdapter);
+        });
+    }
+
+    private void setNearBy(){
+        binding.neabyProgressBar.setVisibility(View.VISIBLE);
+        viewmodel.loadNearByData().observe(getActivity(), itemList->{
+            binding.neabyProgressBar.setVisibility(View.GONE);
+            binding.nearByRecyclerview.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+            nearByAdapter = new NearByAdapter(itemList, getContext());
+            binding.nearByRecyclerview.setAdapter(nearByAdapter);
+        });
+    }
+
     private void setPopular() {
         binding.popProgressBar.setVisibility(View.VISIBLE);
         viewmodel.loadPopularData().observe(getActivity(), itemsList->{
@@ -106,16 +141,6 @@ public class HomeFragment extends Fragment {
             binding.popRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
             popularAdapter = new PopularAdapter(getContext(), itemsList);
             binding.popRecyclerView.setAdapter(popularAdapter);
-        });
-    }
-
-    private void setCategory    () {
-        binding.catProgressBar.setVisibility(View.VISIBLE);
-        viewmodel.loadCategoryData().observe(getActivity(), itemsList->{
-            binding.catProgressBar.setVisibility(View.GONE);
-            binding.catRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-            categoryAdapter = new CategoryAdapter(itemsList, getContext());
-            binding.catRecyclerView.setAdapter(categoryAdapter);
         });
     }
 

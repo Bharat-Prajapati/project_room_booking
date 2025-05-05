@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.apnaroom.Domains.BannerModel;
 import com.example.apnaroom.Domains.CategoryModel;
 import com.example.apnaroom.Domains.ItemsModel;
+import com.example.apnaroom.Domains.Users;
 import com.example.apnaroom.utills.AndroidUtils;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 public class MainRepository {
     private Context context;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    String uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     public MainRepository(Context context) {
         this.context = context;
@@ -48,7 +50,7 @@ public class MainRepository {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(context, "Data is not loaded", Toast.LENGTH_SHORT).show();
+                AndroidUtils.logError(error.getMessage());
             }
         });
         return listData;
@@ -73,7 +75,33 @@ public class MainRepository {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(context, "Data is not loaded", Toast.LENGTH_SHORT).show();
+                AndroidUtils.logError(error.getMessage());
+            }
+        });
+
+        return listData;
+    }
+
+    public LiveData<ArrayList<ItemsModel>> loadNearByData(){
+        MutableLiveData<ArrayList<ItemsModel>> listData = new MutableLiveData<>();
+        DatabaseReference reference = database.getReference("NearBy");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<ItemsModel> list = new ArrayList<>();
+                for (DataSnapshot childrenSnapshot: snapshot.getChildren()){
+                    ItemsModel item = childrenSnapshot.getValue(ItemsModel.class);
+                    if (item != null){
+                        list.add(item);
+                    }
+                }
+                listData.setValue(list);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                AndroidUtils.logError(error.getMessage());
             }
         });
 
@@ -99,7 +127,7 @@ public class MainRepository {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(context, "Data is not loaded", Toast.LENGTH_SHORT).show();
+                AndroidUtils.logError(error.getMessage());
             }
         });
 
@@ -125,7 +153,7 @@ public class MainRepository {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(context, "Data is not loaded", Toast.LENGTH_SHORT).show();
+                AndroidUtils.logError(error.getMessage());
             }
         });
 
@@ -155,7 +183,7 @@ public class MainRepository {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(context, "Data is not loaded", Toast.LENGTH_SHORT).show();
+                AndroidUtils.logError(error.getMessage());
             }
         });
 
@@ -164,9 +192,59 @@ public class MainRepository {
 
     public LiveData<ArrayList<ItemsModel>> loadFavData(){
         MutableLiveData<ArrayList<ItemsModel>> listData = new MutableLiveData<>();
-        String uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         DatabaseReference reference = database.getReference("Favourite").child(uId);
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<ItemsModel> list = new ArrayList<>();
+                for (DataSnapshot childrenSnapshot: snapshot.getChildren()){
+                    ItemsModel item = childrenSnapshot.getValue(ItemsModel.class);
+                    if (item != null){
+                        list.add(item);
+                    }
+                }
+                listData.setValue(list);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                AndroidUtils.logError(error.getMessage());
+            }
+        });
+
+        return listData;
+    }
+
+    public LiveData<ArrayList<Users>> loadUserDetails(){
+        MutableLiveData<ArrayList<Users>> listData = new MutableLiveData<>();
+        DatabaseReference reference = database.getReference("Users");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<Users> list = new ArrayList<>();
+                for (DataSnapshot childrenSnapshot: snapshot.getChildren()){
+                    Users item = childrenSnapshot.getValue(Users.class);
+                    if (item != null){
+                        list.add(item);
+                    }
+                }
+                listData.setValue(list);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                AndroidUtils.logError(error.getMessage());
+            }
+        });
+
+        return listData;
+    }
+
+    public LiveData<ArrayList<ItemsModel>> loadBookingDetails(){
+        MutableLiveData<ArrayList<ItemsModel>> listData = new MutableLiveData<>();
+        DatabaseReference reference = database.getReference("Booking").child(uId);
 
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
