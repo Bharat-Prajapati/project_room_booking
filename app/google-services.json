@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "142200781270",
+    "firebase_url": "https://apnaroom-8be9b-default-rtdb.firebaseio.com",
+    "project_id": "apnaroom-8be9b",
+    "storage_bucket": "apnaroom-8be9b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142200781270:android:a52aca100112e0f99a8c77",
+        "android_client_info": {
+          "package_name": "com.example.apnaroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142200781270-2tnaqvk9hnhbi8qvptv6f94p86em6hsp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apnaroom",
+            "certificate_hash": "4863c8126b72bd2e5582450b43861d0b99f1e5e8"
+          }
+        },
+        {
+          "client_id": "142200781270-cf2vllq7cvcea5m9deo3cs8k4uklm5g0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCatfVjYtmLZjrlgPn0GUNb6iUalNfKoRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142200781270-cf2vllq7cvcea5m9deo3cs8k4uklm5g0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
