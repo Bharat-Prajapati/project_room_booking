@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         if (currentFragment instanceof HomeFragment || currentFragment instanceof FavouriteFragment || currentFragment instanceof ProfileFragment){
             if (System.currentTimeMillis() - againPressTime <= 2000){
                 super.onBackPressed();
+                finishAffinity();
             }else {
                 againPressTime = System.currentTimeMillis();
                 Toast.makeText(this, "Tap again to exit", Toast.LENGTH_SHORT).show();
