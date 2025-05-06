@@ -65,8 +65,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/CircleImageView"
-                    tools:src="@tools:sample/backgrounds/scenic" />
+                    android:src="@drawable/placeholder"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
 
                 <TextView
                     android:id="@+id/BookTitleTxt"

@@ -30,12 +30,12 @@
                     android:layout_height="350dp"
                     android:scaleType="centerCrop"
                     android:alpha="1"
+                    android:src="@drawable/placeholder"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:shapeAppearanceOverlay="@style/CircleImageView"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
 
                 <View
                     android:id="@+id/black_overlay"
