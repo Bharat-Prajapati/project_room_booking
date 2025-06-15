@@ -24,7 +24,7 @@
         android:id="@+id/cancelBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_cancel_24" />
 
@@ -33,14 +33,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="5dp"
+        android:ellipsize="end"
         android:maxLines="1"
         android:text="title"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:ellipsize="end"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelBtn"
         app:layout_constraintStart_toEndOf="@+id/favPic"
         app:layout_constraintTop_toTopOf="@+id/favPic" />
 

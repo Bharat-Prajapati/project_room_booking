@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.example.apnaroom.Domains.ItemsModel;
 import com.example.apnaroom.activities.DetailsActivity;
 import com.example.apnaroom.databinding.ViewholderPopularBinding;
+import com.example.apnaroom.databinding.ViewholderRecommendedBinding;
 import com.example.apnaroom.interfaces.OnClickItemListener;
 
 import java.util.ArrayList;
@@ -28,14 +29,16 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopViewH
     @NonNull
     @Override
     public PopularAdapter.PopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ViewholderPopularBinding binding = ViewholderPopularBinding.inflate(LayoutInflater.from(context), parent, false);
+        ViewholderRecommendedBinding binding = ViewholderRecommendedBinding.inflate(LayoutInflater.from(context), parent, false);
         return new PopViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PopularAdapter.PopViewHolder holder, int position) {
         ItemsModel item = popularItems.get(position);
+
         holder.binding.roomName.setText(item.getName());
+        holder.binding.roomLocation.setText(item.getLocation());
         holder.binding.roomPrice.setText(String.format("$-"+item.getPrice_per_night()));
 
         Glide.with(context).load(item.getImage_url()).into(holder.binding.picUrl);
@@ -58,8 +61,8 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopViewH
     }
 
     public class PopViewHolder extends RecyclerView.ViewHolder {
-        ViewholderPopularBinding binding;
-        public PopViewHolder(@NonNull ViewholderPopularBinding binding) {
+        ViewholderRecommendedBinding binding;
+        public PopViewHolder(@NonNull ViewholderRecommendedBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

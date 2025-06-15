@@ -12,7 +12,9 @@ import com.example.apnaroom.Domains.CategoryModel;
 import com.example.apnaroom.Domains.ItemsModel;
 import com.example.apnaroom.Domains.Users;
 import com.example.apnaroom.utills.AndroidUtils;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -216,21 +218,17 @@ public class MainRepository {
         return listData;
     }
 
-    public LiveData<ArrayList<Users>> loadUserDetails(){
-        MutableLiveData<ArrayList<Users>> listData = new MutableLiveData<>();
-        DatabaseReference reference = database.getReference("Users");
+    public LiveData<Users> loadUserDetails(String uId){
+        MutableLiveData<Users> userData = new MutableLiveData<>();
+        DatabaseReference reference = database.getReference("Users").child(uId);
 
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<Users> list = new ArrayList<>();
-                for (DataSnapshot childrenSnapshot: snapshot.getChildren()){
-                    Users item = childrenSnapshot.getValue(Users.class);
-                    if (item != null){
-                        list.add(item);
-                    }
+                Users user = snapshot.getValue(Users.class);
+                if (user != null) {
+                    userData.setValue(user);
                 }
-                listData.setValue(list);
             }
 
             @Override
@@ -239,7 +237,7 @@ public class MainRepository {
             }
         });
 
-        return listData;
+        return userData;
     }
 
     public LiveData<ArrayList<ItemsModel>> loadBookingDetails(){

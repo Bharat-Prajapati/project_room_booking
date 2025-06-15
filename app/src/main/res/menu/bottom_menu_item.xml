@@ -12,10 +12,10 @@
         android:title="Favourite"
         />
 
-    <item
-        android:id="@+id/setting"
-        android:icon="@drawable/ic_setting_24"
-        android:title="Setting"/>
+<!--    <item-->
+<!--        android:id="@+id/setting"-->
+<!--        android:icon="@drawable/ic_setting_24"-->
+<!--        android:title="Setting"/>-->
 
     <item
         android:id="@+id/profile"

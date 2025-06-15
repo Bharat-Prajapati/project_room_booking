@@ -56,4 +56,8 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.circleimageview)
     implementation(libs.library)
+
+    implementation ("androidx.biometric:biometric:1.2.0-alpha04")
+    implementation("com.github.f0ris.sweetalert:library:1.5.6")
+
 }

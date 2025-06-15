@@ -32,7 +32,6 @@ public class MainViewmodel extends ViewModel{
         return repository.loadNearByData();
    }
 
-
    public LiveData<ArrayList<ItemsModel>> loadPopularData(){
         return repository.loadPopularData();
    }
@@ -49,8 +48,8 @@ public class MainViewmodel extends ViewModel{
         return repository.loadFavData();
    }
 
-    public LiveData<ArrayList<Users>> loadUserDetails(){
-            return repository.loadUserDetails();
+    public LiveData<Users> loadUserDetails(String uId){
+            return repository.loadUserDetails(uId);
     }
 
     public LiveData<ArrayList<ItemsModel>> loadBookingDetails(){

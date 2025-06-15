@@ -10,6 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.apnaroom.Domains.ItemsModel;
 import com.example.apnaroom.R;
@@ -73,7 +74,7 @@ public class CategoryListActivity extends AppCompatActivity {
 
     private void initList() {
         binding.listProgressbar.setVisibility(View.VISIBLE);
-        binding.rvCatSelectedList.setLayoutManager(new GridLayoutManager(this, 2));
+        binding.rvCatSelectedList.setLayoutManager(new LinearLayoutManager(this));
         viewmodel.loadItemsByCategory(title).observe(this, itemList->{
             binding.listProgressbar.setVisibility(View.GONE);
             fullItemList = itemList;

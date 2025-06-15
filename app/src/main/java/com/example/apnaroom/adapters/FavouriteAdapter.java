@@ -13,7 +13,9 @@ import com.example.apnaroom.Domains.ItemsModel;
 import com.example.apnaroom.activities.DetailsActivity;
 import com.example.apnaroom.databinding.ViewholderFavListBinding;
 import com.example.apnaroom.interfaces.OnClickItemListener;
-
+import com.example.apnaroom.utills.AndroidUtils;
+import com.example.apnaroom.utills.FirebaseUtils;
+import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 
 public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.FavViewHolder> implements OnClickItemListener {
@@ -44,6 +46,26 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.FavV
         holder.itemView.setOnClickListener(v->{
             onClick(item);
         });
+
+        holder.binding.cancelBtn.setOnClickListener(v->{
+            int placeId = item.getId();
+            String key = item.getFirebaseKey();
+            String uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            if (key != null){
+                FirebaseUtils.deleteFromFirebase(uId, placeId, key, task -> {
+                   if (task.isSuccessful()){
+                       notifyItemChanged(position);
+                       notifyItemRemoved(position);
+                       AndroidUtils.showToast(context, item.getName()+" Removed Successfully");
+                   }
+                   else {
+                       AndroidUtils.showToast(context, "Failed to remove "+item.getName());
+                   }
+                });
+            }
+        });
+
     }
 
     @Override

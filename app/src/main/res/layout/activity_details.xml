@@ -104,15 +104,25 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <ImageView
+                        android:id="@+id/ic_location"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/location"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/title_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/title_text"/>
+
                     <TextView
                         android:id="@+id/locationText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
-                        android:layout_marginTop="5dp"
-                        app:layout_constraintTop_toBottomOf="@id/title_text"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@id/title_text" />
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintTop_toTopOf="@id/ic_location"
+                        app:layout_constraintBottom_toBottomOf="@id/ic_location"
+                        app:layout_constraintStart_toEndOf="@id/ic_location" />
 
                     <TextView
                         android:id="@+id/price_per_night"
@@ -159,7 +169,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:textColor="@color/app_color"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:text="Amenities" />
 
@@ -186,7 +196,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:textColor="@color/app_color"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textDirection="inherit"
                 android:text="Description" />
@@ -211,25 +221,44 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:textColor="@color/app_color"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textDirection="inherit"
-                android:text="Review" />
+                android:text="Gallery" />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="@style/Widget.AppCompat.RatingBar.Small"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gallery_rv"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:rating="4"
-                android:numStars="5"
-                android:isIndicator="true"
-                android:progressTint="@color/app_color"
-                android:secondaryProgressTint="@color/app_color"
-                android:backgroundTint="@color/gray_color"
                 />
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView21"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:textColor="@color/app_color"-->
+<!--                android:textSize="25sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textDirection="inherit"-->
+<!--                android:text="Review" />-->
+
+<!--            <RatingBar-->
+<!--                android:id="@+id/ratingBar"-->
+<!--                style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:rating="4"-->
+<!--                android:numStars="5"-->
+<!--                android:isIndicator="true"-->
+<!--                android:progressTint="@color/app_color"-->
+<!--                android:secondaryProgressTint="@color/app_color"-->
+<!--                android:backgroundTint="@color/gray_color"-->
+<!--                />-->
 
             <Button
                 android:id="@+id/bookNow_btn"

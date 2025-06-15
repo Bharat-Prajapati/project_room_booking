@@ -1,12 +1,11 @@
 package com.example.apnaroom.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -21,7 +20,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -29,11 +27,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import kotlin.Result;
-
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     FirebaseAuth auth;
+    ProgressDialog progressDialog;
     GoogleSignInClient googleSignInClient;
     private int RC_SIGN_IN = 100;
 
@@ -51,6 +48,10 @@ public class LoginActivity extends AppCompatActivity {
 
         initFirebase();
 
+        progressDialog.setTitle("Login");
+        progressDialog.setIcon(R.drawable.login_success);
+        progressDialog.setMessage("Logging....");
+
         binding.newAccountText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.show();
                 binding.loginCoverView.setVisibility(View.VISIBLE);
                 binding.loginProgressBar.setVisibility(View.VISIBLE);
                 String email = binding.loginEmailText.getText().toString();
@@ -117,6 +119,8 @@ public class LoginActivity extends AppCompatActivity {
                 FirebaseUser currentUser = auth.getCurrentUser();
                 AndroidUtils.showToast(LoginActivity.this, "Sign in successful " + currentUser.getDisplayName());
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                finish();
             }
             else {
                 AndroidUtils.showToast(LoginActivity.this, "Authentication Failed");
@@ -128,11 +132,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private void signWithEmailAndPassword(String email, String password) {
         if (email.isEmpty()){
+            progressDialog.dismiss();
             binding.loginProgressBar.setVisibility(View.GONE);
             binding.loginCoverView.setVisibility(View.GONE);
             binding.loginEmailText.setError("Please fill email");
         }
         else if (password.isEmpty()){
+            progressDialog.dismiss();
             binding.loginProgressBar.setVisibility(View.GONE);
             binding.loginCoverView.setVisibility(View.GONE);
             binding.loginPassText.setError("Please fill password");
@@ -150,13 +156,17 @@ public class LoginActivity extends AppCompatActivity {
 
     private void onCompleteLogin(Task<AuthResult> authResultTask) {
         if (authResultTask.isSuccessful()){
+            progressDialog.dismiss();
             binding.loginProgressBar.setVisibility(View.GONE);
             binding.loginCoverView.setVisibility(View.GONE);
             AndroidUtils.showToast(this, "Login successful");
             Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(loginIntent);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            finish();
         }
         else {
+            progressDialog.dismiss();
             binding.loginCoverView.setVisibility(View.GONE);
             binding.loginProgressBar.setVisibility(View.GONE);
         }
@@ -164,6 +174,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initFirebase() {
         auth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(LoginActivity.this);
     }
 
 

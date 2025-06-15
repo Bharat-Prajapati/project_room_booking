@@ -32,14 +32,14 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
         binding = ActivityDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
         ItemsModel item = (ItemsModel) getIntent().getSerializableExtra("item");
 
         popBundle(item);
@@ -52,6 +52,8 @@ public class DetailsActivity extends AppCompatActivity {
             Intent intent = new Intent(this, BookingActivity.class);
             intent.putExtra("item", item);
             startActivity(intent);
+
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
         binding.favouriteIcon.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +68,9 @@ public class DetailsActivity extends AppCompatActivity {
     private void addToFavList(ItemsModel item) {
         if (item != null && auth.getCurrentUser() != null){
             String uId = auth.getCurrentUser().getUid();
+            String pushKey = databaseReference.child(uId).push().getKey();
+
+            item.setFirebaseKey(pushKey);
 
             databaseReference.child(uId).push().setValue(item)
                     .addOnSuccessListener(unused -> AndroidUtils.showToast(this, "Added to favourite!"))
@@ -84,7 +89,7 @@ public class DetailsActivity extends AppCompatActivity {
             binding.titleText.setText(item.getName());
             binding.descriptionText.setText(item.getDescription());
             binding.selectedItemRatingText.setText("⭐ "+String.valueOf(item.getRating()));
-            binding.ratingBar.setRating((float) item.getRating());
+//            binding.ratingBar.setRating((float) item.getRating());
             binding.locationText.setText(item.getLocation());
             binding.reviewsText.setText("{"+item.getReviews()+" Reviews}");
             binding.pricePerNight.setText("$" + String.valueOf(item.getPrice_per_night())+"/Night");

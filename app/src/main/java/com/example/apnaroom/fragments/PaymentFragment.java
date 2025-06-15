@@ -2,9 +2,9 @@ package com.example.apnaroom.fragments;
 
 import android.os.Bundle;
 
+import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.apnaroom.Domains.ItemsModel;
-import com.example.apnaroom.R;
 import com.example.apnaroom.databinding.FragmentPaymentBinding;
 import com.example.apnaroom.utills.AndroidUtils;
 import com.google.android.gms.tasks.OnSuccessListener;

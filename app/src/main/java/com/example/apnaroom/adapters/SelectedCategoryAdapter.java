@@ -37,8 +37,9 @@ public class SelectedCategoryAdapter extends RecyclerView.Adapter<SelectedCatego
         ItemsModel item = itemList.get(position);
         holder.binding.selectedItemTitle.setText(item.getName());
         holder.binding.selectedItemLocation.setText(item.getLocation());
-        holder.binding.selectedItemPrice.setText("$ "+String.valueOf(item.getPrice_per_night()));
+        holder.binding.selectedItemPrice.setText("$ "+String.valueOf(item.getPrice_per_night())+"/night");
         holder.binding.selectedItemRatingText.setText("⭐"+String.valueOf(item.getRating()));
+//        holder.binding.selectedItemReviews.setText(item.getReviews()+" reviews");
 //        holder.binding.selectedItemPrice.setText("$ "+String.valueOf(item.getPrice_per_month()));
 
         Glide.with(context).load(item.getImage_url()).into(holder.binding.selectedItemPic);

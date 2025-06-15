@@ -15,11 +15,12 @@ public class ItemsModel implements Serializable {
     private double rating;
     private int reviews;
     private double price_per_month;
+    private String firebaseKey;
 
     public ItemsModel() {
     }
 
-    public ItemsModel(int id, String name, String location, double price_per_night, boolean availability, String description, ArrayList<String> amenities, String image_url, double rating, int reviews, double price_per_month) {
+    public ItemsModel(int id, String name, String location, double price_per_night, boolean availability, String description, ArrayList<String> amenities, String image_url, double rating, int reviews, double price_per_month, String firebaseKey) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -31,6 +32,7 @@ public class ItemsModel implements Serializable {
         this.rating = rating;
         this.reviews = reviews;
         this.price_per_month = price_per_month;
+        this.firebaseKey = firebaseKey;
     }
 
     public int getId() {
@@ -119,5 +121,13 @@ public class ItemsModel implements Serializable {
 
     public void setPrice_per_month(){
         this.price_per_month = price_per_month;
+    }
+
+    public String getFirebaseKey() {
+        return firebaseKey;
+    }
+
+    public void setFirebaseKey(String firebaseKey) {
+        this.firebaseKey = firebaseKey;
     }
 }

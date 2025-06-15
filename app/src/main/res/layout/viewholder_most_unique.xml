@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/white_bg"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/selectedItemPic"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+    <TextView
+        android:id="@+id/selectedItemRatingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/cat_yellow_bg"
+        android:padding="10dp"
+        android:text="⭐ 4.4"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/selectedItemPic"
+        app:layout_constraintTop_toTopOf="@+id/selectedItemPic" />
+
+    <TextView
+        android:id="@+id/selectedItemTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="The kamal Villa"
+        android:textColor="@color/app_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/selectedItemPrice"
+        app:layout_constraintStart_toStartOf="@+id/selectedItemPic"
+        app:layout_constraintTop_toBottomOf="@+id/selectedItemPic" />
+
+    <ImageView
+        android:id="@+id/ic_location"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/location"
+        app:layout_constraintStart_toStartOf="@+id/selectedItemTitle"
+        app:layout_constraintBottom_toTopOf="@+id/exceptionText"
+        app:layout_constraintTop_toBottomOf="@+id/selectedItemTitle" />
+
+
+    <TextView
+        android:id="@+id/selectedItemLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="Jaipur, Rajasthan"
+        android:textColor="@color/separation_color"
+        android:textSize="18sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="@+id/ic_location"
+        app:layout_constraintStart_toEndOf="@id/ic_location"
+        app:layout_constraintTop_toTopOf="@+id/ic_location" />
+
+    <TextView
+        android:id="@+id/exceptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Exceptional: "
+        android:textColor="@color/separation_color"
+        app:layout_constraintStart_toStartOf="@+id/selectedItemTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic_location" />
+
+
+    <TextView
+        android:id="@+id/selectedItemReviews"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="Jaipur, Rajasthan"
+        android:textColor="@color/separation_color"
+        android:textSize="13sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="@+id/exceptionText"
+        app:layout_constraintStart_toEndOf="@id/exceptionText"
+        app:layout_constraintTop_toTopOf="@+id/exceptionText" />
+
+    <TextView
+        android:id="@+id/startingFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="Starting from"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/selectedItemPrice"
+        app:layout_constraintEnd_toEndOf="@+id/selectedItemPic" />
+
+    <TextView
+        android:id="@+id/selectedItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="$-4000"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/selectedItemReviews"
+        app:layout_constraintEnd_toEndOf="@+id/selectedItemPic" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

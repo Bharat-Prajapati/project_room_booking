@@ -52,15 +52,25 @@ public class FavouriteFragment extends Fragment {
         binding.favProgressBar.setVisibility(View.VISIBLE);
         viewmodel.loadFavData().observe(getActivity(), itemList->{
             binding.favProgressBar.setVisibility(View.GONE);
-            binding.rvFavList.setLayoutManager(new LinearLayoutManager(getContext()));
-            favouriteAdapter = new FavouriteAdapter(itemList, getContext());
-            binding.rvFavList.setAdapter(favouriteAdapter);
+            if (itemList != null && !itemList.isEmpty()) {
+                binding.rvFavList.setVisibility(View.VISIBLE);
+                binding.emptyLayout.setVisibility(View.GONE);
+
+                binding.rvFavList.setLayoutManager(new LinearLayoutManager(getContext()));
+                favouriteAdapter = new FavouriteAdapter(itemList, getContext());
+                binding.rvFavList.setAdapter(favouriteAdapter);
+            }
+            if (itemList.size() == 0){
+                binding.rvFavList.setVisibility(View.GONE);
+                binding.emptyLayout.setVisibility(View.VISIBLE);
+            }
         });
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         binding = null;
     }
 }

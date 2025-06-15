@@ -23,7 +23,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
     private ArrayList<CategoryModel> categoryItems;
     private Context context;
     private int lastSelectedPosition = -1;
-    private int selectedPosition = -1;
+    private int selectedPosition = 0;
 
     public CategoryAdapter(ArrayList<CategoryModel> categoryItems, Context context) {
         this.categoryItems = categoryItems;
@@ -42,24 +42,23 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
         CategoryModel item = categoryItems.get(position);
         holder.binding.titleText.setText(item.getTitle());
 
-        holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                lastSelectedPosition = selectedPosition;
-                selectedPosition = position;
-                notifyItemChanged(lastSelectedPosition);
-                notifyItemChanged(selectedPosition);
+//        if (item.getTitle().equals("Rooms")) {
+//            holder.binding.titleText.setBackgroundResource(R.drawable.cat_yellow_bg);
+//            holder.binding.titleText.setTextColor(ContextCompat.getColor(context, R.color.white));
+//        }
 
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent intent = new Intent(context, CategoryListActivity.class);
+        holder.binding.getRoot().setOnClickListener(v -> {
+            lastSelectedPosition = selectedPosition;
+            selectedPosition = position;
+            notifyItemChanged(lastSelectedPosition);
+            notifyItemChanged(selectedPosition);
+
+            new Handler().postDelayed(() -> {
+                Intent intent = new Intent(context, CategoryListActivity.class);
 //                        intent.putExtra("id", item.getId());
-                        intent.putExtra("title", item.getTitle());
-                        context.startActivity(intent);
-                    }
-                }, 500);
-            }
+                intent.putExtra("title", item.getTitle());
+                context.startActivity(intent);
+            }, 500);
         });
 
         if (selectedPosition == position) {

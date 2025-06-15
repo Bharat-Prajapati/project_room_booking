@@ -1,82 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/white_bg"
-    android:padding="10dp"
-    android:elevation="5dp"
+    android:gravity="center"
+    android:orientation="horizontal"
     android:layout_margin="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/selectedItemPic"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/selectedItemPic"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/selectedItemRatingText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:background="@drawable/cat_yellow_bg"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="⭐ 4.4"-->
+<!--            android:textSize="14sp"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/selectedItemPic"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/selectedItemPic" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/placeholder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/CircleImageView" />
-
-    <TextView
-        android:id="@+id/selectedItemRatingText"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/cat_yellow_bg"
+        android:layout_weight="1"
         android:padding="10dp"
-        android:text="⭐ 4.4"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/selectedItemPic"
-        app:layout_constraintTop_toTopOf="@+id/selectedItemPic" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/selectedItemTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:text="The kamal Villa"
-        android:textColor="@color/app_color"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/selectedItemPrice"
-        app:layout_constraintStart_toStartOf="@+id/selectedItemPic"
-        app:layout_constraintTop_toBottomOf="@+id/selectedItemPic" />
+        <TextView
+            android:id="@+id/selectedItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_margin="5dp"
+            android:text="The kamal Villa"
+            android:textColor="@color/app_color"
+            android:textSize="23sp"
+            android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/selectedItemLocation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:text="Jaipur, Rajasthan"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        android:maxLines="1"
-        android:ellipsize="end"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/selectedItemPrice"
-        app:layout_constraintStart_toStartOf="@+id/selectedItemTitle"
-        app:layout_constraintTop_toBottomOf="@+id/selectedItemTitle" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/selectedItemPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:text="$-4000"
-        android:textColor="@color/black"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/selectedItemLocation"
-        app:layout_constraintEnd_toEndOf="@+id/selectedItemPic"
-        app:layout_constraintTop_toTopOf="@+id/selectedItemTitle" />
+            <ImageView
+                android:id="@+id/ic_location"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/location"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/selectedItemLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="Jaipur, Rajasthan"
+                android:textColor="@color/separation_color"
+                android:textSize="20sp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/selectedItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="$-4000"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/selectedItemRatingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="⭐ 4.4"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/startingFrom"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Starting from"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="18sp" />-->
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -3,9 +3,9 @@ package com.example.apnaroom.fragments;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Handler;
@@ -14,13 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.example.apnaroom.Domains.Users;
 import com.example.apnaroom.R;
 import com.example.apnaroom.adapters.BannerAdapter;
 import com.example.apnaroom.adapters.CategoryAdapter;
 import com.example.apnaroom.adapters.NearByAdapter;
 import com.example.apnaroom.adapters.PopularAdapter;
 import com.example.apnaroom.adapters.RecommendedAdapter;
+import com.example.apnaroom.adapters.ViewPagerAdapter;
 import com.example.apnaroom.databinding.FragmentHomeBinding;
 import com.example.apnaroom.viewmodel.MainViewmodel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class HomeFragment extends Fragment {
 
+    ViewPagerAdapter mostUniqueAdapter;
     BannerAdapter bannerAdapter;
     CategoryAdapter categoryAdapter;
     NearByAdapter nearByAdapter;
@@ -66,6 +67,7 @@ public class HomeFragment extends Fragment {
         setNearBy();
         setPopular();
         setRecommended();
+        setMostUnique();
         setUpUserDetails();
     }
 
@@ -152,7 +154,13 @@ public class HomeFragment extends Fragment {
             recommendedAdapter = new RecommendedAdapter(getContext(), itemList);
             binding.recRecyclerView.setAdapter(recommendedAdapter);
         });
+    }
 
+    private void setMostUnique() {
+        viewmodel.loadRecommendedData().observe(getActivity(), itemsModels -> {
+            mostUniqueAdapter = new ViewPagerAdapter(itemsModels, getContext());
+            binding.mostUnique.setAdapter(mostUniqueAdapter);
+        });
     }
 
     @Override

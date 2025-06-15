@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.CategoryListActivity">
@@ -13,16 +14,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/list_back_btn"
-            android:layout_width="49dp"
-            android:layout_height="49dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="@drawable/cat_yellow_bg"
-            android:padding="10dp"
+            android:padding="8dp"
             app:srcCompat="@drawable/ic_back_24" />
 
         <TextView
