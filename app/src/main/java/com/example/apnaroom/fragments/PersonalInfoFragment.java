@@ -63,6 +63,7 @@ public class PersonalInfoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().finish();
+                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
     }

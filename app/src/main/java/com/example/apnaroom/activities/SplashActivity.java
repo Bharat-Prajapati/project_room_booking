@@ -35,13 +35,6 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
 
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//            }
-//        }, 3000);
-
         binding.startBtn.setOnClickListener(v->{
             if (isNetworkAvailable(SplashActivity.this)) {
                 Intent intent = new Intent(SplashActivity.this, LoginActivity.class);

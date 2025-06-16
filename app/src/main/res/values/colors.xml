@@ -18,5 +18,5 @@
     <color name="WhiteSmoke">#F5F5F5</color>
     <color name="Silver">#C0C0C0</color>
     <color name="LightGray">#D3D3D3</color>
-    <!--    <color name="Gainsboro">#DCDCDC</color>-->
+        <color name="Gainsboro">#CECFD2</color>
 </resources>

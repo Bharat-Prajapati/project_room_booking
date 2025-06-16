@@ -96,9 +96,17 @@ public class HomeFragment extends Fragment {
     }
 
     private void setBanner() {
-        binding.banProgressBar.setVisibility(View.VISIBLE);
+        binding.banProgressBar.setVisibility(View.GONE);
+//        binding.bannerShimmer.startShimmer();
+//        binding.bannerShimmer.setVisibility(View.VISIBLE);
+//        binding.viewBanner.setVisibility(View.GONE);
+
         viewmodel.loadBannerData().observe(getActivity(), itemList->{
             binding.banProgressBar.setVisibility(View.GONE);
+//            binding.bannerShimmer.stopShimmer();
+//            binding.bannerShimmer.setVisibility(View.GONE);
+//            binding.viewBanner.setVisibility(View.VISIBLE);
+
             bannerAdapter = new BannerAdapter(itemList, getContext());
             binding.viewBanner.setAdapter(bannerAdapter);
 
@@ -117,9 +125,16 @@ public class HomeFragment extends Fragment {
     }
 
     private void setCategory() {
-        binding.catProgressBar.setVisibility(View.VISIBLE);
+        binding.catProgressBar.setVisibility(View.GONE);
+//        binding.catShimmer.startShimmer();
+//        binding.catShimmer.setVisibility(View.VISIBLE);
+//        binding.catRecyclerView.setVisibility(View.GONE);
+
         viewmodel.loadCategoryData().observe(getActivity(), itemsList->{
             binding.catProgressBar.setVisibility(View.GONE);
+//            binding.catShimmer.stopShimmer();
+//            binding.catShimmer.setVisibility(View.GONE);
+//            binding.catRecyclerView.setVisibility(View.VISIBLE);
             binding.catRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
             categoryAdapter = new CategoryAdapter(itemsList, getContext());
             binding.catRecyclerView.setAdapter(categoryAdapter);
@@ -127,7 +142,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void setNearBy(){
-        binding.neabyProgressBar.setVisibility(View.VISIBLE);
+        binding.neabyProgressBar.setVisibility(View.GONE);
         viewmodel.loadNearByData().observe(getActivity(), itemList->{
             binding.neabyProgressBar.setVisibility(View.GONE);
             binding.nearByRecyclerview.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -137,7 +152,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void setPopular() {
-        binding.popProgressBar.setVisibility(View.VISIBLE);
+        binding.popProgressBar.setVisibility(View.GONE);
         viewmodel.loadPopularData().observe(getActivity(), itemsList->{
             binding.popProgressBar.setVisibility(View.GONE);
             binding.popRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -147,7 +162,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void setRecommended() {
-        binding.recProgressBar.setVisibility(View.VISIBLE);
+        binding.recProgressBar.setVisibility(View.GONE);
         viewmodel.loadRecommendedData().observe(getActivity(), itemList->{
             binding.recProgressBar.setVisibility(View.GONE);
             binding.recRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));

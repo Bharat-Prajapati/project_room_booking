@@ -60,4 +60,6 @@ dependencies {
     implementation ("androidx.biometric:biometric:1.2.0-alpha04")
     implementation("com.github.f0ris.sweetalert:library:1.5.6")
 
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
+
 }

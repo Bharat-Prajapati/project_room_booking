@@ -31,7 +31,6 @@ public class BookingActivity extends AppCompatActivity {
         });
 
         loadFragment(new PersonalInfoFragment());
-
     }
 
     public void loadFragment(Fragment fragment) {
@@ -43,5 +42,11 @@ public class BookingActivity extends AppCompatActivity {
         if (fragment instanceof PaymentFragment){
             transaction.addToBackStack(null);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }
